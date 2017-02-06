@@ -1,4 +1,5 @@
-
+#+AUTHOR: Ren Wang
+#+EMAIL: iamwrm@gmail.com
 
 
 ** Useful keybidings (Day 14)
@@ -23,6 +24,40 @@
 7. =SPC b N= new empty buffer
 8. =SPC b m= kill others
 9. =SPC b w= toggle buffer read-only
-10. =SPC b Y=  copy the whole buffer to clipboard, the content could be used in other programs
+10. =SPC b Y= copy the whole buffer to clipboard
 11. =SPC b P= paste to the whole buffer
 12. =SPC b s= switch to scratch buffer
+
+*** Unfiled
+    =SPC t l= 切换长行是否自动换行
+* Org Mode
+** org export
+#+BEGIN_SRC lisp
+#+TITLE:       the title to be shown (default is the buffer name)
+#+AUTHOR:      the author (default taken from user-full-name)
+#+DATE:        a date, fixed, of a format string for format-time-string
+#+EMAIL:       his/her email address (default from user-mail-address)
+#+DESCRIPTION: the page description, e.g. for the XHTML meta tag
+#+KEYWORDS:    the page keywords, e.g. for the XHTML meta tag
+#+LANGUAGE:    language for HTML, e.g. ‘en’ (org-export-default-language)
+#+TEXT:        Some descriptive text to be inserted at the beginning.
+#+TEXT:        Several lines may be given.
+#+OPTIONS:     H:2 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t ...
+#+LINK_UP:     the ``up'' link of an exported page
+#+LINK_HOME:   the ``home'' link of an exported page
+#+LATEX_HEADER: extra line(s) for the LaTeX header, like \usepackage{xyz}
+#+END_SRC
+
+
+** header specifics
+   运行和导出代码时的很多选项都通过头参数来设置。选项可以指定为全局的，文件级别的，大纲子树级别的，或者只是用于一个代码块。下面解释部分头参数。
+#+BEGIN_SRC lisp
+:var 头参数用来将参数传递给代码块。能用来传递给参数的值可以是直接量，org模式表格中的值，文字实例块(literal example blocks)中的值，或者一个已命名代码块的结果。
+:results 头参数控制代码块结果的收集、类型和处理。output和value（默认）的值指定怎样在运行代码块时收集结果。vector，scalar，file， raw， html， latex 和 code的值指定代码块结果的类型并以此确定将结果并入Org缓冲区的方式。silent， replace， prepend和 append指定处理代码块结果的方式，明确是否以及如何将结果插入Org缓冲区中。
+:session 头参数将会使代码块在Emacs的一个持续交互的底层进程（persistent interactive inferior process）中执行。这考虑到了代码运行的持续状态和运行结果的人工检查。
+:exports 代码和块结果的任何组合在导出时都可以保持，这可以通过设置:results头参数为code results none或者both来指定。
+:tangle 头参数:tangle yes将使代码块的内容到保存到一个以Org模式缓冲区命名的文件中。也可以通过:tangle filename指明文件名。
+:cache 头参数:cache yes将使繁杂的代码块和结果关联，确保输入改变时代码块重运行。
+:noweb 头参数:noweb将扩展运行和混合时的”noweb“样式的引用。
+:file 将代码块结果输出到文件时（比如，图形，表格，图表）可以用头参数:file filename，结果会被保存至指定的文件中，在Org缓冲区中插入一个到该文件的链接。
+#+END_SRC
