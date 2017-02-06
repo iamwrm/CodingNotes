@@ -10,3 +10,35 @@ Then
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 #+END_EXAMPLE
 
+** python version configurations
+
+
+#+BEGIN_SRC python :results output
+  import sys
+  print (sys.version,end="")
+  print (sys.prefix)
+#+END_SRC
+
+#+RESULTS:
+: 3.6.0 (default, Feb  6 2017, 19:28:40) 
+: [GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)]/Users/wangren/.pyenv/versions/3.6.0
+
+
+
+#+BEGIN_SRC shell
+$ pyenv install 3.5.1
+$ pyenv global 3.5.1
+#+END_SRC
+
+
+*** virtualenv
+#+BEGIN_SRC shell
+cd project/
+virtualenv --no-site-packages venv
+source venv/bin/activate
+deactivate 
+#+END_SRC
+
+** emacs =SPC m c c= will automatically create binary file
+
+
