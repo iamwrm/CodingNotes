@@ -61,3 +61,15 @@
 :noweb 头参数:noweb将扩展运行和混合时的”noweb“样式的引用。
 :file 将代码块结果输出到文件时（比如，图形，表格，图表）可以用头参数:file filename，结果会被保存至指定的文件中，在Org缓冲区中插入一个到该文件的链接。
 #+END_SRC
+
+
+* emacs client
+use these commands to enable emacs working in back
+#+BEGIN_SRC shell
+emacs --daemon
+emacsclient .
+#+END_SRC
+
+then emacs will run in command line mode
+while you can still open a GUI one in desktop
+
