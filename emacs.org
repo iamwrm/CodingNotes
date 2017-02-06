@@ -1,0 +1,28 @@
+
+
+
+** Useful keybidings (Day 14)
+*** File related operations
+1. =SPC f f= to find a file start from the current directory
+2. =SPC f L= find the file across the whole Mac system
+3. =SPC f h= find file in hex mode
+4. =SPC f o= open with external program
+5. =SPC f D= delete current file and buffer
+6. =SPC f r= find the recent file with ivy
+7. =SPC f R= rename the current file
+8. =SPC f y= yank current buffer's full path
+9. =SPC f C d/u= convert file encoding between unix and dos
+
+*** Buffer related operations
+1. =SPC b b= switch buffers 
+2. =SPC  <tab>= switch between the current buffer and the last opened buffer
+3. =SPC b .= buffer micro state (hydra)
+4. =SPC b d= kill a buffer
+5. =SPC b f= find buffer file in finder
+6. =SPC b h= go to home
+7. =SPC b N= new empty buffer
+8. =SPC b m= kill others
+9. =SPC b w= toggle buffer read-only
+10. =SPC b Y=  copy the whole buffer to clipboard, the content could be used in other programs
+11. =SPC b P= paste to the whole buffer
+12. =SPC b s= switch to scratch buffer
