@@ -73,3 +73,9 @@ emacsclient .
 then emacs will run in command line mode
 while you can still open a GUI one in desktop
 
+You can also just open emacs(not emacs server)
+int command line mode 
+#+BEGIN_SRC shell
+emacs -nw
+#+END_SRC 
+this means n(o)w(indow) 
